@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Real Time Chat</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>Real-Time Chat</h1>
+
+
+<h3 id="currentUser"></h3>
+
+
+<h3 id="userCount">
+Online Users: 0
+</h3>
+
+
+
+<!-- Online Users -->
+
+<div class="online-box">
+
+<h3>🟢 Online Members</h3>
+
+
+<select id="userList">
+
+<option>
+No users online
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+<input 
+id="room"
+placeholder="Enter Room Name">
+
+
+<button onclick="joinRoom()">
+
+Join Chat
+
+</button>
+
+
+
+
+
+<div id="messages"></div>
+
+
+
+<p id="typing"></p>
+
+
+
+
+
+<input 
+id="message"
+placeholder="Type Message">
+
+
+
+<button onclick="sendMessage()">
+
+Send
+
+</button>
+
+
+
+
+
+<!-- Private Message -->
+
+<div class="private-section">
+
+
+<h3>💬 Private Message</h3>
+
+
+<input 
+id="privateMessage"
+placeholder="Enter private message">
+
+
+
+<button onclick="sendPrivateMessage()">
+
+Send Private Message
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- File Upload -->
+
+
+<div class="file-section">
+
+
+<h3>📁 Share File</h3>
+
+
+
+<input 
+
+type="file"
+
+id="fileInput"
+
+accept="image/*"
+
+onchange="previewImage()"
+
+>
+
+
+
+<img 
+
+id="preview"
+
+width="200"
+
+>
+
+
+
+
+
+<h3>Share With</h3>
+
+
+
+<label>
+
+<input
+
+type="radio"
+
+name="shareType"
+
+value="room"
+
+checked>
+
+Current Room
+
+</label>
+
+
+
+
+
+<label>
+
+<input
+
+type="radio"
+
+name="shareType"
+
+value="all">
+
+All Users
+
+</label>
+
+
+
+
+
+<button onclick="uploadFile()">
+
+Upload File
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<button 
+
+class="logout-btn"
+
+onclick="logout()">
+
+Logout
+
+</button>
+
+
+
+
+
+</div>
+
+
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="script.js"></script>
+
+
+
+</body>
+
+</html>
